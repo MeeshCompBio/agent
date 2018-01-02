@@ -1,0 +1,28 @@
+:host {
+    overflow-y: auto;
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    label {
+        display: block;
+        font-weight: normal;
+
+        icon {
+            display: inline-block;
+        }
+    }
+
+    .mouse-speed-reset-button {
+        display: block;
+        margin-bottom: 4rem;
+    }
+
+    .mouse-speed-setting {
+        margin-bottom: 6rem;
+
+        + h3 {
+            margin-top: 2rem;
+        }
+    }
+}

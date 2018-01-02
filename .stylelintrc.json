@@ -26,7 +26,7 @@
 
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "unit-whitelist": ["px", "%", "deg", "ms", "em", "rem", "vh", "vv"],
+    "unit-whitelist": ["px", "%", "deg", "ms", "em", "rem", "vh", "vv", "s", "ch"],
 
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
@@ -41,7 +41,6 @@
     "declaration-no-important": true,
 
     "declaration-block-no-duplicate-properties": true,
-    "declaration-block-no-ignored-properties": true,
     "declaration-block-trailing-semicolon": "always",
     "declaration-block-single-line-max-declarations": 1,
     "declaration-block-semicolon-space-before": "never",
@@ -67,6 +66,6 @@
     "selector-pseudo-element-colon-notation": "single",
     "selector-pseudo-element-no-unknown": true,
     "selector-type-case": "lower",
-    "selector-no-id": true
+    "selector-max-id": 0
   }
 }

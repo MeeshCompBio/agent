@@ -1,0 +1,17 @@
+<ng-template [ngIf]="macroOptions.length === 0">
+    <span> No macros are available to choose from. Create a macro first! </span>
+</ng-template>
+<ng-template [ngIf]="macroOptions.length > 0">
+    <p><i>Please note that macro playback is not implemented yet. You can bind macros, but they don't have any effect.</i></p>
+    <div class="macro-selector">
+        <b> Play macro: </b>
+        <select2 [data]="macroOptions" [value]="macroOptions[selectedMacroIndex].id" (valueChanged)="onChange($event)" [width]="'100%'"></select2>
+    </div>
+    <div class="macro-action-container">
+        <div class="list-group">
+            <macro-item *ngFor="let macroAction of macros[selectedMacroIndex].macroActions"
+                        [macroAction]="macroAction" [editable]="false">
+            </macro-item>
+        </div>
+    </div>
+</ng-template>

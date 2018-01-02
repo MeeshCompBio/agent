@@ -1,0 +1,29 @@
+:host {
+    label {
+        display: block;
+        font-weight: normal;
+
+        icon {
+            display: inline-block;
+        }
+    }
+
+    .slider-wrapper {
+        display: flex;
+        flex-direction: row;
+        padding-left: 1.6rem;
+    }
+
+    .slider-container {
+        width: 80%;
+    }
+
+    .slider-value {
+        width: 20%;
+    }
+
+    .value-indicator {
+        margin: 1rem 1rem 1rem 3rem;
+        vertical-align: middle;
+    }
+}

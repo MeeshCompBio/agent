@@ -1,0 +1,12 @@
+:host {
+    /deep/ text {
+        dominant-baseline: central;
+    }
+
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        fill: #494949;
+    }
+}

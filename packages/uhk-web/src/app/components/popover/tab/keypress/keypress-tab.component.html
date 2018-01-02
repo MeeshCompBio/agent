@@ -1,0 +1,53 @@
+<div class="scancode-options">
+    <b class="setting-label">Scancode:</b>
+    <select2
+            [data]="scanCodeGroups"
+            [value]="selectedScancodeOption.id"
+            (valueChanged)="onScancodeChange($event)"
+            [width]="200"
+            [options]="options"
+    ></select2>
+    <capture-keystroke-button (capture)="onKeysCapture($event)" tabindex="0"></capture-keystroke-button>
+</div>
+<div class="modifier-options">
+    <b class="setting-label">Modifiers:</b>
+    <div class="btn-toolbar modifiers">
+        <div class="btn-group btn-group-sm modifiers__left">
+            <button type="button" class="btn btn-default"
+                    *ngFor="let modifier of leftModifiers; let index = index"
+                    [class.btn-primary]="leftModifierSelects[index]"
+                    (click)="toggleModifier(false, index)"
+            >
+                {{modifier}}
+            </button>
+        </div>
+        <div class="btn-group btn-group-sm modifiers__right">
+            <button type="button" class="btn btn-default"
+                    *ngFor="let modifier of rightModifiers; let index = index"
+                    [class.btn-primary]="rightModifierSelects[index]"
+                    (click)="toggleModifier(true, index)"
+            >
+                {{modifier}}
+            </button>
+        </div>
+    </div>
+</div>
+<div class="long-press-container" *ngIf="secondaryRoleEnabled">
+    <b class="setting-label">Secondary role:</b>
+    <select2 #secondaryRoleSelect
+             [data]="secondaryRoleGroups"
+             [value]="selectedSecondaryRoleIndex.toString()"
+             (valueChanged)="onSecondaryRoleChange($event)"
+             [width]="140"
+    ></select2>
+    <icon name="question-circle"
+          data-toggle="tooltip"
+          title="The secondary role activates when another key gets pressed while holding this key."
+          data-placement="bottom"></icon>
+</div>
+
+<div class="disabled-state--text">
+    <i class="fa fa-info-circle"></i>
+    When a key is configured as layer switcher key, you can't assign other functions to it.
+    To assign a scancode to the key, set the <em>Layer action</em> to <em>None</em>.
+</div>

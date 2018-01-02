@@ -1,0 +1,26 @@
+<uhk-header>
+    <div class="row">
+        <h1 class="col-xs-12 pane-title">
+            <i class="fa fa-play"></i>
+            <input #macroName cancelable
+                   class="pane-title__name"
+                   type="text"
+                   (change)="editMacroName($event.target.value)"
+                   (keyup.enter)="macroName.blur()"
+                   (keyup)="calculateHeaderTextWidth($event.target.value)">
+            <i class="glyphicon glyphicon-trash macro__remove pull-right" title=""
+               data-toggle="tooltip"
+               data-placement="bottom"
+               html="true"
+               data-original-title="<span class='text-nowrap'>Delete macro</span>"
+               (click)="removeMacro()"
+            ></i>
+            <i class="fa fa-files-o macro__duplicate pull-right" title=""
+               data-toggle="tooltip"
+               data-placement="bottom"
+               data-original-title="Duplicate macro"
+               (click)="duplicateMacro()"
+            ></i>
+        </h1>
+    </div>
+</uhk-header>

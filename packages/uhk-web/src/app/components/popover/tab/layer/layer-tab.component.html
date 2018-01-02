@@ -1,0 +1,20 @@
+<ng-template [ngIf]="!isNotBase">
+    <select (change)="toggleChanged($event.target.value)">
+        <option *ngFor="let item of toggleData" [value]="item.id" [selected]="toggle === item.id">
+            {{ item.text }}
+        </option>
+    </select>
+    <span>the</span>
+    <select (change)="layerChanged($event.target.value)">
+        <option *ngFor="let item of layerData" [value]="item.id" [selected]="layer === item.id">
+            {{ item.text }}
+        </option>
+    </select>
+    <span [ngSwitch]="toggle">
+        <ng-template [ngSwitchCase]="true">layer by pressing this key.</ng-template>
+        <ng-template ngSwitchDefault>layer by holding this key.</ng-template>
+    </span>
+</ng-template>
+<ng-template [ngIf]="isNotBase">
+    <span> Layer switching is only possible from the base layer. </span>
+</ng-template>

@@ -1,0 +1,34 @@
+os: unstable
+
+environment:
+  GH_TOKEN:
+    secure: 3IebpEKmC39codi1wT6dXx8mql4/mCL1JzZ7lir7GQ5MWRnCxlED2OXbiKHHigDV
+  matrix:
+    - nodejs_version: "8"
+
+cache:
+  - node_modules -> package.json
+
+matrix:
+  fast_finish: true
+
+build: off
+
+shallow_clone: true
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm i -g npm@5.6.0
+  - choco install chromium
+  - set CI=true
+  - set PATH=%APPDATA%\npm;%PATH%
+  - node -v
+  - npm -v
+  - appveyor-retry npm install
+
+test_script:
+  - appveyor-retry npm run build
+  - npm run lint
+  - set CHROME_BIN="C:\Program Files (x86)\Chromium\Application\chrome.exe"
+  - npm run test
+  - npm run release

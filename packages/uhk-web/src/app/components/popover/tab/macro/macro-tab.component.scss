@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    > span {
+        text-align: center;
+    }
+
+    .macro-selector {
+        display: flex;
+        margin-top: 2px;
+
+        b {
+            display: flex;
+            align-items: center;
+            margin-right: 7px;
+        }
+
+        select2 {
+            flex: 1;
+        }
+    }
+
+    .macro-action-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 200px;
+        max-height: 300px;
+        margin: 20px 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+
+        .list-group {
+            margin-bottom: 0;
+            border: 0;
+        }
+    }
+}

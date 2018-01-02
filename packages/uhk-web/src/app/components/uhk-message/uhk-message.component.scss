@@ -1,0 +1,39 @@
+.uhk-message-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.agent-logo {
+    padding: 2em;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+
+    > h2 {
+        margin-top: 10px;
+    }
+}
+
+.spin-logo {
+    -webkit-animation: spin 2s ease-in-out infinite;
+    -moz-animation: spin 2s ease-in-out infinite;
+    animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

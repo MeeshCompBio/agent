@@ -1,0 +1,36 @@
+:host {
+    display: block;
+
+    &.disabled {
+        button {
+            cursor: no-drop;
+            background: rgba(#ccc, 0.43);
+            pointer-events: none;
+
+            &.btn-primary {
+                background: #7c7c7c;
+                border-color: #7c7c7c;
+            }
+        }
+    }
+}
+
+.uhk {
+    &__layer-switcher {
+        &--wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+
+            &:before {
+                content: attr(data-title);
+                display: inline-block;
+                position: absolute;
+                bottom: 0.55em;
+                right: 100%;
+                font-size: 18px;
+                padding-right: 0.45em;
+                margin: 0;
+            }
+        }
+    }
+}
